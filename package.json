@@ -1,8 +1,8 @@
 {
-  "name": "scratchpad",
-  "productName": "scratchpad",
+  "name": "raydium-trading",
+  "productName": "raydium-trading",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Raydium Trading Bot",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +13,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "Kilian Valkhof",
-    "email": "kilian@kilianvalkhof.com"
+    "name": "cryptoxdev"
   },
   "license": "MIT",
   "config": {
