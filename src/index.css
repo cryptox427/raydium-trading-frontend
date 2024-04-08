@@ -1,0 +1,21 @@
+html, body {
+  position: relative;
+  margin:0;
+  background: #263238;
+  color: rgb(121, 133, 144);
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+.start-btn {
+  font-size: 22px;
+  background-color: blue;
+  padding: 20px;
+  cursor: pointer;
+  display: block;
+  margin-top: 30px;
+}
