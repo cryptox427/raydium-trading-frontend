@@ -12,9 +12,7 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": {
-    "name": "cryptoxdev"
-  },
+  "author": "cryptoxdev",
   "license": "MIT",
   "config": {
     "forge": {
