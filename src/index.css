@@ -19,3 +19,13 @@ html, body {
   display: block;
   margin-top: 30px;
 }
+
+.stop-btn {
+  font-size: 22px;
+  background-color: rgb(151, 32, 32);
+  padding: 20px;
+  cursor: pointer;
+  display: block;
+  margin-top: 30px;
+}
+
