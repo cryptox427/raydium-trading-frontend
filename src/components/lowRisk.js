@@ -6,12 +6,13 @@ const LowRisk = () => {
     const [privKey, setPrivKey] = useState('');
     const [startAmount, setStartAmount] = useState(2);
     const [buyTrigger, setBuyTrigger] = useState(12);
+    const [buyTriggerRSI, setBuyTriggerRSI] = useState(10);
     const [sellTrigger, setSellTrigger] = useState(6);
     const [stopLoss, setStopLoss] = useState(6);
     const [started, setStarted] = useState(false);
 
     const startTrading = async () => {
-        await axios.get(`${CONFIG.BACKEND_URL}/start?risk=low&private_key=${privKey}&start_amount=${startAmount}&buy_trigger=${buyTrigger}&sell_trigger=${sellTrigger}&stop_loss=${stopLoss}`)
+        await axios.get(`${CONFIG.BACKEND_URL}/start?risk=low&private_key=${privKey}&start_amount=${startAmount}&buy_trigger=${buyTrigger}&sell_trigger=${sellTrigger}&stop_loss=${stopLoss}&buy_trigger_rsi=${buyTriggerRSI}`)
         setStarted(true);
     }
 
@@ -26,6 +27,8 @@ const LowRisk = () => {
         <input type='number' value={startAmount} onChange={ev => {setStartAmount(ev.target.value)}} />
         <p>Buy Trigger percentage(%)</p>
         <input type='number' value={buyTrigger} onChange={ev => {setBuyTrigger(ev.target.value)}} />
+        <p>Buy Trigger RSI</p>
+        <input type='number' value={buyTriggerRSI} onChange={ev => { setBuyTriggerRSI(ev.target.value) }} />
         <p>Sell Trigger percentage(%)</p>
         <input type='number' value={sellTrigger} onChange={ev => {setSellTrigger(ev.target.value)}} />
         <p>Stop Loss percentage(%)</p>
