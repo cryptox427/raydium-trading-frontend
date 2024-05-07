@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import CONFIG from '../config';
 
-const LowRisk = () => {
+const LowRisk = ({tokenId}) => {
     const [privKey, setPrivKey] = useState('');
     const [startAmount, setStartAmount] = useState(2);
     const [buyTrigger, setBuyTrigger] = useState(12);
@@ -12,12 +12,12 @@ const LowRisk = () => {
     const [started, setStarted] = useState(false);
 
     const startTrading = async () => {
-        await axios.get(`${CONFIG.BACKEND_URL}/start?risk=low&private_key=${privKey}&start_amount=${startAmount}&buy_trigger=${buyTrigger}&sell_trigger=${sellTrigger}&stop_loss=${stopLoss}&buy_trigger_rsi=${buyTriggerRSI}`)
+        await axios.get(`${CONFIG.BACKEND_URL}/start?risk=low&private_key=${privKey}&start_amount=${startAmount}&buy_trigger=${buyTrigger}&sell_trigger=${sellTrigger}&stop_loss=${stopLoss}&buy_trigger_rsi=${buyTriggerRSI}&tokenId=${tokenId}`)
         setStarted(true);
     }
 
     const stopTrading = async () => {
-        await axios.get(`${CONFIG.BACKEND_URL}/stop?risk=low`);
+        await axios.get(`${CONFIG.BACKEND_URL}/stop?risk=low&tokenId=${tokenId}`);
         setStarted(false);
     }
 

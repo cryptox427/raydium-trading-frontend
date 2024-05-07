@@ -29,3 +29,10 @@ html, body {
   margin-top: 30px;
 }
 
+.display {
+  z-index: 100000;
+}
+
+.hide {
+  display: none;
+}
