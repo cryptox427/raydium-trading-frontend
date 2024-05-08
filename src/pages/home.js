@@ -15,7 +15,6 @@ const Home = () => {
         try {
             const res = await axios.get(`${CONFIG.BACKEND_URL}/fetch?tokenId=${tokenId}`);
             setData(res.data);
-            setTokenAddress(res.data.address ? res.data.address : '');
 
         } catch (err) {
             console.log(err)
@@ -46,6 +45,7 @@ const Home = () => {
                 <input type='text' value={tokenAddress} onChange={ev => { setTokenAddress(ev.target.value) }} />
                 <button onClick={updateToken}>Set Token</button>
                 {data.price && <div>
+                    <p>Mint: {data.address}</p>
                     <p>RSI: {data.rsi}</p>
                     <p>Price: {data.price} USD</p>
                 </div>}
@@ -70,22 +70,6 @@ const Home = () => {
                 </div>
             })
         }
-
-        {/* <div className={tokenId ? 'flex-container' : 'flex-container hide'} style={{ marginTop: 50 }}>
-            <HighRisk />
-
-            <MidRisk />
-
-            <LowRisk />
-        </div>
-
-        <div className={!tokenId ? 'flex-container' : 'flex-container hide'} style={{ marginTop: 50 }}>
-            <HighRisk />
-
-            <MidRisk />
-
-            <LowRisk />
-        </div> */}
 
         <Logs />
 
